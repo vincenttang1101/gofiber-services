@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <div className='font-be-vietnam-pro bg-footer-gradient'>
+    <div className='bg-footer-gradient'>
       <div className='container'>
         <ul className='grid grid-cols-4 py-[64px] text-white'>
           <li className='flex items-center gap-3 uppercase'>

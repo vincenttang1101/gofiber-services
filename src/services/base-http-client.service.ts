@@ -29,7 +29,7 @@ class BaseHttpClient {
   }
 
   protected async request<R>(endpoint: string, options: RequestInit = {}): Promise<R> {
-    const { method = 'GET', headers = {}, body = null } = options
+    const { method = 'GET', headers = {}, body = null, cache = 'no-store' } = options
 
     const url = this.buildUrl(endpoint)
 
@@ -42,12 +42,12 @@ class BaseHttpClient {
       body:
         body && typeof body === 'object' && !(body instanceof FormData)
           ? JSON.stringify(body)
-          : body
+          : body,
+      cache
     }
 
     try {
       const response = await fetch(url, fetchOptions)
-      console.log(response)
       if (!response.ok) {
         throw new HttpError(response)
       }

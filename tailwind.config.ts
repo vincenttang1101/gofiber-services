@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import plugin from 'tailwindcss/plugin'
 
 const config = {
   darkMode: ['class'],
@@ -14,13 +15,15 @@ const config = {
       center: true,
       padding: '2rem',
       screens: {
-        '2xl': '1400px'
+        '2xl': '1440px'
       }
     },
     extend: {
+      screens: {
+        '3xl': '1920px'
+      },
       fontFamily: {
-        inter: ['var(--font-inter)', 'sans-serif'],
-        'be-vietnam-pro': ['var(--font-be-vietnam-pro)', 'sans-serif']
+        inter: ['var(--font-inter)', 'sans-serif']
       },
       colors: {
         border: 'hsl(var(--border))',
@@ -31,7 +34,8 @@ const config = {
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
-          btn: '#15ABC6'
+          btn: '#15ABC6',
+          content: '#fff'
         },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
@@ -78,11 +82,23 @@ const config = {
         'accordion-up': 'accordion-up 0.2s ease-out'
       },
       backgroundImage: {
-        'footer-gradient': 'linear-gradient(71deg, #141E27 -30.98%, #203B53 103.04%)'
+        'footer-gradient': 'linear-gradient(71deg, #141E27 -30.98%, #203B53 103.04%)',
+        'header-gradient': 'linear-gradient(71deg, #141E27 -30.98%, #203853 103.04%)'
       }
     }
   },
-  plugins: [require('tailwindcss-animate')]
+  plugins: [
+    require('tailwindcss-animate'),
+    plugin(function ({ addBase, addComponents, addUtilities, theme }) {
+      addBase({
+        h2: {
+          color: theme('colors.primary.content'),
+          fontSize: '48px',
+          fontWeight: '700'
+        }
+      })
+    })
+  ]
 } satisfies Config
 
 export default config

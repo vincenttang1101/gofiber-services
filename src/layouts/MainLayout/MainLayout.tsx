@@ -9,9 +9,9 @@ type MainLayoutProps = {
 
 export default async function MainLayout({ children }: MainLayoutProps) {
   return (
-    <div className='bg-[#141E27] pt-[48px]'>
+    <div className='text-primary-content bg-[#141E27] pt-[48px]'>
       <Header />
-      <main className='min-h-screen'>{children}</main>
+      <main className='mt-[60px] min-h-screen'>{children}</main>
       <Footer />
     </div>
   )
