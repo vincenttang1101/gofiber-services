@@ -13,7 +13,7 @@ export default async function HomePage() {
           alt: 'VPS',
           width: 917,
           height: 664,
-          className: 'h-[664px] w-full 3xl:w-[917px] 3xl:!max-w-[917px]'
+          className: '3xl:w-[917px] h-[664px]'
         }}
       />
     </div>

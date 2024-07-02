@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { useEffect, useRef, useState } from 'react'
 
 import { type Banner } from '@/constants/banners'
 import { cn } from '@/libs/utils'
@@ -19,9 +20,9 @@ export default function Banner({
 }: BannerProps) {
   return (
     <section className={cn('mb-[240px]', className)}>
-      <div className='container'>
+      <div className='container relative'>
         <div className='flex flex-col items-center justify-between lg:flex-row'>
-          <div className='w-1/2'>
+          <div className='w-[51%]'>
             <h2 className='w-full'>{title}</h2>
             <div className='mb-[48px] mt-[24px]'>
               {descs.map((desc, index) => (
@@ -33,13 +34,13 @@ export default function Banner({
             <PrimaryButton className='h-[48px] min-w-[183px]'>Tìm hiểu thêm</PrimaryButton>
           </div>
 
-          <figure className={cn('relative w-1/2', classNameImageWrapper)}>
+          <figure className={cn('relative w-[49%]', classNameImageWrapper)}>
             <Image
               src={imageConfigs.src}
               alt={imageConfigs.alt}
               width={imageConfigs.width}
               height={imageConfigs.height}
-              className={imageConfigs.className}
+              className={`${imageConfigs.className} !max-w-none`}
             />
           </figure>
         </div>
