@@ -12,7 +12,7 @@ export default function PrimaryButton({ children, className }: PrimaryButtonProp
   return (
     <Button
       className={cn(
-        'flex items-center justify-center rounded-[24px] bg-primary-btn px-[24px] py-[12px] text-[16px] font-normal',
+        'flex items-center justify-center rounded-[24px] bg-primary-btn px-[24px] py-[12px] text-[16px] font-medium',
         className
       )}
     >

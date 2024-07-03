@@ -40,7 +40,7 @@ export default function Banner({
               alt={imageConfigs.alt}
               width={imageConfigs.width}
               height={imageConfigs.height}
-              className={`${imageConfigs.className} !max-w-none`}
+              className={`${imageConfigs.className} w-full !max-w-none`}
             />
           </figure>
         </div>
